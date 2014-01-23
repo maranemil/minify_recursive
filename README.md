@@ -5,15 +5,27 @@ minify_recursive
 
 <p>
 <h3>Requirements</h3>
-The only requirement is to install YUICOMPRESSOR https://github.com/yui/yuicompressor
+Install YUICOMPRESSOR from https://github.com/yui/yuicompressor
+Install Git Bash (Git-1.8.3-preview20130601) http://git-scm.com/download/win
 </p>
 
 <p>
 <h3>Installation</h3>
 <ol>
 <li>Configure path to YUICOMPRESSOR_PATH by editing the minify_recursive.sh file</li>
-<li>Create a soft link of minify_recursive script in /usr/local/bin <code>ln -s minify_recursive.sh /usr/local/bin/minify_recursive</code></li>
-<li>Give execute permission to minify_recursive script <code>chmod +x minify_recursive.sh</code></li>
+<li>Create a job for minify_recursive script in run_minify.sh</li>
+<li>Run run_minify.sh from server console or attach this phpStorm as External Tool using Winbash</li>
+<li>To configure this job as ExternalTools in phpStorm
+
+1. Create a new Tool with following settings:
+
+Program: C:\Program Files (x86)\Git\bin\sh.exe
+Parameters: --login -i -c  run_minify.sh
+Working Directory: d:\
+
+2. Create a key Shortcut in phpStorm Keymap IDE Settings like CTRL+B for Example
+
+</li>
 </ol>
 </p>
 
