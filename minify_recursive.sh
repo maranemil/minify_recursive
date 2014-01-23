@@ -73,9 +73,9 @@ for file in `find $CURRENT_DIR -name "*.$TYPE"`
     			echo "Already minified: $file $ERROR_DISPLAY"
     	# if the file does not have a minified version create it!
     		else		
-    			####MINIFIED_FILE_DIRECTORY="$FILE_DIRECTORY/minified" # ORG
+    			# MINIFIED_FILE_DIRECTORY="$FILE_DIRECTORY/minified" # ORG
     			MINIFIED_FILE_DIRECTORY="$FILE_DIRECTORY"
-    			####create_directory_if_not_exist $MINIFIED_FILE_DIRECTORY # ORG
+    			# create_directory_if_not_exist $MINIFIED_FILE_DIRECTORY # ORG
     			MINIFIED_OUTPUT_FILE="$MINIFIED_FILE_DIRECTORY/$MINIFIED_FILE_NAME"
     			echo "Compressing $file $OK_DISPLAY"
     			java -jar $YUICOMPRESSOR_PATH --type $TYPE -o $MINIFIED_OUTPUT_FILE $file
