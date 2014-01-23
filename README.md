@@ -4,6 +4,12 @@ minify_recursive
 <p>Minify_recursive is a shell script that uses YUICOMPRESSOR to minify all css and js files recursively in a directory. In can be used in phpStorm as External Tool</p>
 
 <p>
+Forked from:
+https://github.com/chia/minify_recursive
+</p>
+
+
+<p>
 <h3>Requirements</h3>
 Install YUICOMPRESSOR from https://github.com/yui/yuicompressor <br />
 Install Git Bash (Git-1.8.3-preview20130601) http://git-scm.com/download/win
@@ -24,6 +30,9 @@ Install Git Bash (Git-1.8.3-preview20130601) http://git-scm.com/download/win
       Working Directory: d:\ <br /> <br />
       </code>
     2. Create a key Shortcut in phpStorm Keymap IDE Settings like CTRL+B for Example <br />
+    
+    [![Editor Screen](https://raw.github.com/maranemil/minify_recursive / how_to_add_externaltool_phpstorm.jpg)]
+    
     
     </li>
   </ol>
