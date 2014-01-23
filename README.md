@@ -21,7 +21,7 @@ Install Git Bash (Git-1.8.3-preview20130601) http://git-scm.com/download/win
     <li>Configure path to YUICOMPRESSOR_PATH by editing the minify_recursive.sh file</li>
     <li>Create a job for minify_recursive script in run_minify.sh</li>
     <li>Run run_minify.sh from server console or attach this to phpStorm as External Tool using GitBash</li>
-    <li>To configure this job as ExternalTools in phpStorm using GitBash/WinBash:
+    <li>To configure this job as ExternalTools in phpStorm using GitBash/WinBash: <br /><br />
     
     1. Create a new Tool with following settings: <br /><br />
       <code>
