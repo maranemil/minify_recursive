@@ -1,7 +1,7 @@
 minify_recursive
 ================
 
-<p>Minify_recursive is a shell script that uses YUICOMPRESSOR to minify all css and js files recursively in a directory.</p>
+<p>Minify_recursive is a shell script that uses YUICOMPRESSOR to minify all css and js files recursively in a directory. In can be used in phpStorm as External Tool</p>
 
 <p>
 <h3>Requirements</h3>
