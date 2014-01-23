@@ -31,12 +31,11 @@ Install Git Bash (Git-1.8.3-preview20130601) http://git-scm.com/download/win
       </code>
     2. Create a key Shortcut in phpStorm Keymap IDE Settings like CTRL+B for Example <br />
     
-    [![Editor Screen](https://raw.github.com/maranemil/minify_recursive / how_to_add_externaltool_phpstorm.jpg)]
-    
-    
     </li>
   </ol>
 </p>
+
+[![Editor Screen](https://raw2.github.com/maranemil/minify_recursive/master/how_to_add_externaltool_phpstorm.jpg)]
 
 <p>
 <h3>Here how it works</h3>
