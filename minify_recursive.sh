@@ -1,13 +1,23 @@
 #!/bin/sh
 
+## original source
+# https://github.com/chia/minify_recursive/blob/master/minify_recursive.sh
+
 # Configuration
-YUICOMPRESSOR_PATH="/path/to/yuicompressor-2.4.7.jar"
+YUICOMPRESSOR_PATH="/path/to/yuicompressor-2.4.8.jar"
 
 # if you want to enable it for specific directory set it here, by default its current dir
 CURRENT_DIR=$PWD
 
 # First argument must be either css / js
 TYPE=$1
+
+# Second argument - folder - must be specified 
+if [ !  -d $2 ]; then
+  echo "Second argument must be a folder / directory. $file $ERROR_DISPLAY"
+  exit 0
+fi
+
 
 # Status messages
 ERROR_DISPLAY="\t\033[31;40m\033[1m[error]\033[0m"
@@ -56,11 +66,19 @@ for file in `find $CURRENT_DIR -name "*.$TYPE"`
       BASE_FILE_NAME=`basename $file`
       MINIFIED_FILE_NAME=${BASE_FILE_NAME%$TYPE}min.$TYPE
       # Minified directory path for the current file
-      MINIFIED_FILE_DIRECTORY="$FILE_DIRECTORY/minified"
-      create_directory_if_not_exist $MINIFIED_FILE_DIRECTORY
-
-      MINIFIED_OUTPUT_FILE="$MINIFIED_FILE_DIRECTORY/$MINIFIED_FILE_NAME"
-      echo "Compressing $file $OK_DISPLAY"
-      java -jar $YUICOMPRESSOR_PATH --type $TYPE -o $MINIFIED_OUTPUT_FILE $file
-    fi
+	  
+  		# if file is already minified skip that file
+  		if ( echo $file | grep -qE ^*min.$TYPE$ )
+    		then 
+    			echo "Already minified: $file $ERROR_DISPLAY"
+    	# if the file does not have a minified version create it!
+    		else		
+    			####MINIFIED_FILE_DIRECTORY="$FILE_DIRECTORY/minified" # ORG
+    			MINIFIED_FILE_DIRECTORY="$FILE_DIRECTORY"
+    			####create_directory_if_not_exist $MINIFIED_FILE_DIRECTORY # ORG
+    			MINIFIED_OUTPUT_FILE="$MINIFIED_FILE_DIRECTORY/$MINIFIED_FILE_NAME"
+    			echo "Compressing $file $OK_DISPLAY"
+    			java -jar $YUICOMPRESSOR_PATH --type $TYPE -o $MINIFIED_OUTPUT_FILE $file
+  		fi
+    fi 
   done
